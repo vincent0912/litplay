@@ -3,10 +3,13 @@ import { LitElement, html, customElement, property } from 'lit-element';
 @customElement('my-element')
 export class MyElement extends LitElement {
     @property()
-    foo = 'foo';
+    foo = {'firstName':'Tom','lastName':'chen','email':'jdsckdjs@gmail.com'};
 
     render() {
-        return html`<p>${this.foo}</p>`;
+        return html`
+        <h1  style='color:blue;'>${this.foo.firstName}</h1>
+        <h2 style="font-family:fantasy;">${this.foo.lastName} </h2>        
+        <h3>${this.foo.email}</h3>`;
     }
 
     firstUpdated(changedProperties:any) {
@@ -15,7 +18,7 @@ export class MyElement extends LitElement {
         });
         fetch('api/user')
             .then((response) => response.json())
-            .then((bodyRes) => console.log(bodyRes));
+            .then((bodyRes) => this.foo=bodyRes);
 
-    }
+    };
 }
