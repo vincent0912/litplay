@@ -3,11 +3,11 @@ import { LitElement, html, customElement, property } from 'lit-element';
 @customElement('my-element')
 export class MyElement extends LitElement {
     @property()
-    foo = {'firstName':'Tom','lastName':'chen','email':'jdsckdjs@gmail.com'};
+    foo = {'firstName':'andy','lastName':'hsu','email':'asd456@yahoo.com.tw'};
 
     render() {
         return html`
-        <h1  style='color:blue;'>${this.foo.firstName}</h1>
+        <h1  style='color:red;'>${this.foo.firstName}</h1>
         <h2 style="font-family:fantasy;">${this.foo.lastName} </h2>        
         <h3>${this.foo.email}</h3>`;
     }
